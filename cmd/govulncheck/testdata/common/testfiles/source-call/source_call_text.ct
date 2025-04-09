@@ -73,11 +73,19 @@ Use '-show verbose' for more details.
 #####
 # Test of basic govulncheck in source mode with the -show verbose flag
 $ govulncheck -C ${moddir}/vuln -show verbose ./... --> FAIL 3
-Scanning your code and P packages across M dependent modules for known vulnerabilities...
-
 Fetching vulnerabilities from the database...
 
 Checking the code against the vulnerabilities...
+
+The package pattern matched the following 2 root packages:
+  golang.org/vuln
+  golang.org/vuln/subdir
+Govulncheck scanned the following 5 modules and the go1.18 standard library:
+  golang.org/vuln
+  github.com/tidwall/gjson@v1.6.5
+  github.com/tidwall/match@v1.1.0
+  github.com/tidwall/pretty@v1.2.0
+  golang.org/x/text@v0.3.0
 
 === Symbol Results ===
 
@@ -127,3 +135,7 @@ Your code is affected by 2 vulnerabilities from 1 module.
 This scan also found 1 vulnerability in packages you import and 1 vulnerability
 in modules you require, but your code doesn't appear to call these
 vulnerabilities.
+
+# Test no vulnerabilities in source mode
+$ govulncheck -C ${moddir}/novuln ./...
+No vulnerabilities found.
