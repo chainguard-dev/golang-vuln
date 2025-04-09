@@ -12,7 +12,7 @@ import (
 	"log"
 	"os"
 
-	"golang.org/x/vuln/internal/govulncheck"
+	"golang.org/x/vuln/pkg/govulncheck"
 )
 
 // CompareVulns checks if packages of called vulnerable symbols
