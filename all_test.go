@@ -17,7 +17,7 @@ import (
 	"testing"
 
 	"golang.org/x/mod/modfile"
-	"golang.org/x/vuln/internal/testenv"
+	"golang.org/x/vuln/pkg/testenv"
 )
 
 // excluded contains the set of modules that x/vuln should not depend on.
